@@ -41,7 +41,7 @@ img {
   background-color: #333;
   width: 100%;
   padding: 1rem;
-  z-index: 2;
+  z-index: 1;
 }
 
 #navbar .container {
@@ -87,42 +87,40 @@ img {
 
 /* WELCOME_SECTION */
 #welcome-section {
-  padding: 25rem;
   display: flex;
   justify-content: center;
   text-align: center;
-  background: #333;
   position: relative;
   width: 100%;
   height: 100vh;
-}
-
-#welcome-section:before {
-  content: '';
-  background: url(/logoimage.jpg) no-repeat center center/cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  opacity: 0.4;
-  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(/logoimage.jpg) no-repeat center center/cover;
+  background-attachment: fixed;
 }
 
 #welcome-section .container {
-  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-#welcome-section h1 {
+#welcome-section .heading-title {
   text-transform: uppercase;
   padding-top: 3rem;
   font-size: 4rem;
   color: #fff;
+
+  animation-name: moveInLeft;
+  animation-duration: 1.7s;
 }
 
 #welcome-section p {
   font-size: 2.2rem;
   margin-top: 0.5rem;
   font-weight: bold;
+
+  animation-name: moveInRight;
+  animation-duration: 1.7s;
 }
 
 /* PROJECT SECTION */
@@ -231,6 +229,30 @@ img {
 }
 
 
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 @media(max-width:800px) {
   #navbar .container #header-title {
     font-size: 1.2rem;
@@ -244,6 +266,7 @@ img {
     font-size: 2rem;
   }
 }
+
 
 
 
