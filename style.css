@@ -180,21 +180,21 @@ img {
 
 #contact-section .text-fields {
   display: grid;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-gap: 1.3rem;
   margin-bottom: 1.2rem;
 }
 
 #contact-section .text-fields .text-input {
-  padding: 0.3rem 1rem;
+  padding: 0.75rem 1rem;
   width: 350px;
   border: 1px solid #bdbdbd;
   border-radius: 5px;
 }
 
-/* .message-input {
-  height: 100px;
-} */
+.message-input {
+  height: 150px;
+}
 
 #contact-section .text-fields .text-input:focus {
   outline-color: #c72727; 
